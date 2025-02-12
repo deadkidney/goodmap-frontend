@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { useCategories } from '../Categories/CategoriesContext';
 import useDebounce from '../../utils/hooks/useDebounce';
 import { httpService } from '../../services/http/httpService';
@@ -7,7 +6,6 @@ import { useMapStore } from '../Map/store/map.store';
 
 export const FiltersForm = () => {
     const { setCategories } = useCategories();
-    const [selectedFilters, setSelectedFilters] = useState({});
     const [categoriesData, setCategoriesData] = useState([]);
     const mapConfiguration = useMapStore(state => state.mapConfiguration);
     const mapConfigDebounced = useDebounce(mapConfiguration, 5000);
